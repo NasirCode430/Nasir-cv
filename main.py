@@ -1,20 +1,20 @@
 ### Main page for streamlit resume
 import streamlit as st
 import time
-import pages.about
-import pages.skills
-import pages.projects
-import pages.edu
-import pages.recommendations
+import app_pages.about
+import app_pages.skills
+import app_pages.projects
+import app_pages.edu
+import app_pages.recommendations
 
 import resources.ast as ast
 
 PAGES = {
-    "About": pages.about,
-    "Education" : pages.edu,
-    "Skills": pages.skills,
-    "Projects": pages.projects,
-    "Recommendations": pages.recommendations
+    "About": app_pages.about,
+    "Education" : app_pages.edu,
+    "Skills": app_pages.skills,
+    "Projects": app_pages.projects,
+    "Recommendations": app_pages.recommendations
 }
 
 
@@ -33,7 +33,6 @@ def main():
         st.markdown("---")
 
         # --- Navigation ---
-        st.markdown("### 🧭 Navigation")
         selection = st.radio(
             "Choose a section:",
             list(PAGES.keys()),
